@@ -46,10 +46,10 @@ Window {
 
         function start_run() {
             if (labelProgressBar.text === "") {
-            }
-            else {
                 labelProgressBar.text = qsTr("Подготовка к сортировки");
                 labelProgressBar.color = "Blue"
+            }
+            else {
             }
         }
 
@@ -81,7 +81,7 @@ Window {
             }
 
             onClicked: {
-                start_run()
+                column.start_run()
                 window.qml_run()
             }
         }
