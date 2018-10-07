@@ -69,3 +69,4 @@ gridLayout - табличное размещение<br>
 calculator - калькулятор<br>
 splitter - виджет разделительной черты<br>
 labelHTML - вставка HTML текста в label<br>
+labelBuddy - поле и ввод, в духе логин/пароль<br>
