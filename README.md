@@ -72,3 +72,4 @@ labelHTML - вставка HTML текста в label<br>
 labelBuddy - поле и ввод, в духе логин/пароль<br>
 progress - идикатор прогресса выполнения программы<br>
 buttons - варианты кнопок<br>
+menu - простая кнопка Menu<br>
