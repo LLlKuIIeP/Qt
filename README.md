@@ -77,3 +77,5 @@ linesEdit - тоже аккаунт/пароль, аналог labelBuddy<br>
 writeODF - запись в odf(open document format) файл<br>
 writePDF - запись в pdf<br>
 syntaxHighligher - редактор подцветки синтаксиса, главное наследование от QSyntaxHighligher<br>
+spinBox - простой счетчик<br>
+dateTime - простой элемент ввода даты/времени<br>
