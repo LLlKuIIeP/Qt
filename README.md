@@ -74,3 +74,5 @@ progress - идикатор прогресса выполнения програ
 buttons - варианты кнопок<br>
 menu - простая кнопка Menu<br>
 linesEdit - тоже аккаунт/пароль, аналог labelBuddy<br>
+writeODF - запись в odf(open document format) файл<br>
+writePDF - запись в pdf<br>
