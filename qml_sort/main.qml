@@ -45,11 +45,16 @@ Window {
         }
 
         function start_run() {
-            if (labelProgressBar.text === "") {
-                labelProgressBar.text = qsTr("Подготовка к сортировки");
-                labelProgressBar.color = "Blue"
+            if (pathFile.text === "") {
+                labelProgressBar.text = qsTr("Необходимо выбрать файл");
+                labelProgressBar.color = "Red"
+                return -1;
             }
-            else {
+
+            if (labelProgressBar.text === "") {
+                labelProgressBar.text = qsTr("Подготовка");
+                labelProgressBar.color = "Blue"
+                return 1;
             }
         }
 
@@ -81,8 +86,9 @@ Window {
             }
 
             onClicked: {
-                column.start_run()
-                window.qml_run()
+                if (column.start_run() !== -1) {
+                    window.qml_run()
+                }
             }
         }
 
@@ -166,7 +172,8 @@ Window {
         nameFilters: ["TXT (*.txt)"]
 
         onAccepted: {
-            pathFile.text = fileDialog.fileUrls.toString().substr(8, fileDialog.fileUrls.toString().length)
+            //pathFile.text = fileDialog.fileUrls.toString().substr(8, fileDialog.fileUrls.toString().length)//windows
+            pathFile.text = fileDialog.fileUrls.toString().substr(7, fileDialog.fileUrls.toString().length)//linux
             //console.log(fileDialog.fileUrls)
             window.qml_select_file(pathFile.text)
         }

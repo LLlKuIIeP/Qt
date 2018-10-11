@@ -48,8 +48,8 @@ private:
     std::vector<std::future<void>> m_vec_futures;
     std::future<void> m_barrier;
 
-    std::vector<long> ReadFile();
-    void WriteFile(std::vector<long int>&);
+    std::vector<double> ReadFile();
+    void WriteFile(std::vector<double>&);
     void SortFiles();
 };
 

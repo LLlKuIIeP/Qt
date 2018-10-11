@@ -3,7 +3,7 @@
 #include <thread>
 #include <chrono>
 #include <future>
-
+#include <limits>
 #include <cstdio>
 
 #include <QFile>
@@ -14,9 +14,8 @@
 
 #include "parallel_sort.h"
 
-#define MAX_ELEMENTS 1000
-#define MAX_THREDS 100
-
+#define MAX_ELEMENTS 5000
+#define MAX_THREDS 1
 
 ParallelSort::ParallelSort(QObject *parent)
             : QObject(parent) {
@@ -65,6 +64,7 @@ void ParallelSort::slot_run() {
     }
 
     m_file_in.open(m_selected_file->GetInputFileName().toStdString());
+
     if (m_file_in.is_open()) {
         m_fun = [this] () {
             while (true) {
@@ -109,7 +109,7 @@ void ParallelSort::slot_save_file() {
         std::string in_file_name(std::to_string(m_number_files) + ".txt");
         std::ifstream in_file(in_file_name);
 
-        long int x;
+        double x;
         in_file >> x;
         out_file << x;
 
@@ -124,19 +124,19 @@ void ParallelSort::slot_save_file() {
     }
 }
 
-std::vector<long int> ParallelSort::ReadFile() {
+std::vector<double> ParallelSort::ReadFile() {
     if (m_file_in.is_open()) {
 
         ///--------------------------------------------------------------///
         if (m_fun_wait() == 2) {
             std::lock_guard<std::mutex> lock_file_in(m_lock_file_in);
             m_file_in.seekg(0, std::ios_base::end);
-            return std::vector<long int>();
+            return std::vector<double>();
         }
         ///--------------------------------------------------------------///
 
-        std::vector<long int> vec;
-        long int x;
+        std::vector<double> vec;
+        double x;
 
         std::lock_guard<std::mutex> lock_file_in(m_lock_file_in);
         for (size_t i = 0; i < MAX_ELEMENTS & !m_file_in.eof(); ++i) {
@@ -148,11 +148,11 @@ std::vector<long int> ParallelSort::ReadFile() {
         return vec;
     }
     else {
-        return std::vector<long int>();
+        return std::vector<double>();
     }
 }
 
-void ParallelSort::WriteFile(std::vector<long> &vec) {
+void ParallelSort::WriteFile(std::vector<double> &vec) {
     std::lock_guard<std::mutex> lock_file_out(m_lock_file_out);
 
     ///--------------------------------------------------------------///
@@ -187,7 +187,7 @@ void ParallelSort::SortFiles() {
         std::ifstream file_in_1(std::to_string(in_file_1) + ".txt");
         std::ifstream file_in_2(std::to_string(in_file_2) + ".txt");
 
-        long int x1, x2;
+        double x1, x2;
 
         if (file_in_1.is_open() & file_in_2.is_open()) {
             std::ofstream of_file(std::to_string(out_file) + "_.txt", std::ios_base::trunc);
