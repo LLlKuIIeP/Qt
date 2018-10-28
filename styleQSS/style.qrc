@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>png/btn.png</file>
+        <file>png/btnhvd.png</file>
+        <file>png/btnprs.png</file>
+        <file>qss/simple.qss</file>
+        <file>png/btn.bmp</file>
+    </qresource>
+</RCC>

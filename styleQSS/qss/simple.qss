@@ -1,0 +1,18 @@
+QPushButton {
+        min-width: 150px;
+}
+
+QPushButton {
+        border-image: url(:/png/btnhvd.png) 10;
+        border-width: 10px;
+}
+
+QPushButton:hover {/*нведен курсор на кнопку*/
+        border-image: url(:/png/btnhvd.png) 10px;
+        border-width: 1px;
+}
+
+QPushButton:pressed {/*нажата кнопка*/
+        border-image: url(:/png/btnprs.png) 10px;
+        border-width: 1px;
+}
