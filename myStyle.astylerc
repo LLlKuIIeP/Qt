@@ -1,0 +1,15 @@
+style=kr
+indent=spaces=4
+indent-switches
+indent-namespaces
+attach-namespaces
+attach-classes
+break-blocks
+pad-oper
+align-pointer=name
+align-reference=name
+break-elseifs
+break-closing-braces
+add-braces
+break-one-line-headers
+pad-method-colon=after
