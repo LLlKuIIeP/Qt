@@ -110,3 +110,7 @@ process - простой пример создания процесса(38.1)<br
 thread - создание объекта управления потоком и отправка объекта в поток(38.2)<br>
 simpleThread - простой пример потока без цикла сообщений(38.5)<br>
 tcpServer - TCP сервер(39.1)<br>
+tcpClient - TCP клиент(39.7)<br>
+udpServer - UDP сервер(39.14)<br>
+udpClient - UDP клиент(39.17)<br>
+downloaderGui - загрузка из сети высокоуровневыми методами QNetworkAccessManager, QNetworkReply(39.20)<br>
