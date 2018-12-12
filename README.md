@@ -114,3 +114,5 @@ tcpClient - TCP клиент(39.7)<br>
 udpServer - UDP сервер(39.14)<br>
 udpClient - UDP клиент(39.17)<br>
 downloaderGui - загрузка из сети высокоуровневыми методами QNetworkAccessManager, QNetworkReply(39.20)<br>
+qtDesigner - создание форм(44.1)<br>
+qtTest - работа с QTest(45.1)<br>
