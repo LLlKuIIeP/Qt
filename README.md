@@ -116,3 +116,5 @@ udpClient - UDP клиент(39.17)<br>
 downloaderGui - загрузка из сети высокоуровневыми методами QNetworkAccessManager, QNetworkReply(39.20)<br>
 qtDesigner - создание форм(44.1)<br>
 qtTest - работа с QTest(45.1)<br>
+qJS - отпрвка комманд в сценарии JS(45.9)<br>
+turtle - рисование при помощи JS - черепашка(52.1)<br>
