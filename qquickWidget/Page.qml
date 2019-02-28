@@ -2,13 +2,20 @@ import QtQuick 2.10
 import QtQuick.Controls 2.3
 
 Item {
+    id: root
+
     width: 500
     height: 400
 
-    property real minimalWidth: 100
+    property alias minimalWidth: root.width
+    property alias minimalHeight: root.height
 
     onMinimalWidthChanged: {
-        console.log(minimalWidth)
+        console.log(width)
+    }
+
+    onMinimalHeightChanged: {
+        console.log(height)
     }
 
     signal signalOk()

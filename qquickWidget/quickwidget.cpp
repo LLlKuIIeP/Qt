@@ -23,8 +23,8 @@ void QuickWidget::slotOk()
 
     QQuickItem *item = rootObject();
     qDebug() << QQmlProperty::read(item, "minimalWidth");
-    qDebug() << item->property("minimalWidth");
+    qDebug() << item->property("minimalHeight");
 
     QQmlProperty::write(item, "minimalWidth", 200);
-    item->setProperty("minimalWidth", 250);
+    item->setProperty("minimalHeight", 250);
 }
