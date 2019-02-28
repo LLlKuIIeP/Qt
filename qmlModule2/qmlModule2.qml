@@ -5,13 +5,6 @@ Item {
     width: 680
     height: 500
 
-//        LineCanvas {
-//            id: lineCanvas
-
-//            anchors.fill: parent
-//        }
-
-
     LineCanvas {
         id: lineCanvas
 
@@ -33,7 +26,7 @@ Item {
                         //textFont.pixelSize: 30
                         color: "lightgray"
                         pressedColor: "gray"
-                        opacity: 0.6
+                        //opacity: 0.6
                         padding: 10
                         height: parent.width - 6
                         anchors {
