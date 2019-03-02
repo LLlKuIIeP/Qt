@@ -8,33 +8,25 @@ Canvas {
     property real widthLine
 
     function fun(color, width , points) {
-        var line = JSON.parse('{ "color": "' + color +
-                              '", "width": ' + width +
-                              ', "points": [ ' +
-                                            '{"x": ' + points[0].x +', "y": ' + points[0].y + '},' +
-                                            '{"x": ' + points[1].x +', "y": ' + points[1].y + '}' +
-                                            ' ] ' +
-                              '}');
-
-        lines.push(line);
+        lines.push({ color: color, width: width, points: [ { x: points[0].x, y: points[0].y }, { x: points[1].x, y: points[1].y } ] })
     }
 
-    function removeColor(color) {
+    function removeColor(color)
+    {
         canvas.lines = canvas.lines.filter(function (line) {
                 if(line.color === color ) {
-                    return false;
-
+                    return false
                 }
-                return true;
+                return true
             }
-        );
+        )
 
-        canvas.requestPaint();
+        canvas.requestPaint()
     }
 
     onPaint: {
-        var ctx = getContext("2d")
-        ctx.clearRect(0, 0, width, height)
+        var ctx = getContext("2d");
+        ctx.clearRect(0, 0, width, height);
 
         for(var i = 0; i < lines.length; ++i) {
             ctx.strokeStyle = lines[i].color
@@ -54,15 +46,12 @@ Canvas {
         property real xMx
         property real yMy
 
-        onPressed: {
-            xMx = mouseX
-            yMy = mouseY
-        }
+        onPressed: { xMx = mouseX; yMy = mouseY }
 
         onPositionChanged: {
             canvas.fun(canvas.colorLine, canvas.widthLine, [{x: xMx, y: yMy}, {x: mouseX, y: mouseY}]);
-            xMx = mouseX
-            yMy = mouseY
+            xMx = mouseX;
+            yMy = mouseY;
             canvas.requestPaint();
         }
     }
