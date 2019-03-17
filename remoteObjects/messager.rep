@@ -1,0 +1,9 @@
+#include <QtCore>
+
+
+class Messager
+{
+    SLOT(slotServer());
+    SIGNAL(signalServer(QVector<int> &vec));
+    PROP(QVariant some);
+};
